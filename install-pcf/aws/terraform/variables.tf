@@ -9,8 +9,6 @@ variable "opsman_ami" {}
 variable "amis_nat" {}
 variable "aws_region" {}
 variable "aws_az1" {}
-variable "aws_az2" {}
-variable "aws_az3" {}
 variable "route53_zone_id" {}
 
 /*
@@ -81,6 +79,7 @@ variable "nat_ip_az1" {
 variable "opsman_ip_az1" {
     default = "10.0.0.7"
 }
+<<<<<<< HEAD
 
 /*
   Availability Zone 2
@@ -152,3 +151,5 @@ variable "nat_ip_az3" {
     default = "10.0.2.6"
 }
 
+=======
+>>>>>>> 170ac983... my edits for 1 az

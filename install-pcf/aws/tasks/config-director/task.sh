@@ -63,6 +63,7 @@ EOF
 )
 
 read -r -d '' az_configuration <<EOF
+<<<<<<< HEAD
 {
   "availability_zones": [
     { "name": "$az1" },
@@ -70,6 +71,11 @@ read -r -d '' az_configuration <<EOF
     { "name": "$az3" }
   ]
 }
+=======
+[
+    { "name": "$az1" }
+]
+>>>>>>> 170ac983... my edits for 1 az
 EOF
 
 read -r -d '' networks_configuration <<EOF
@@ -86,6 +92,7 @@ read -r -d '' networks_configuration <<EOF
           "reserved_ip_ranges": "$ert_subnet_reserved_ranges_z1",
           "dns": "$dns",
           "gateway": "$ert_subnet_gw_az1",
+<<<<<<< HEAD
           "availability_zones": ["$az1"]
         },
         {
@@ -103,6 +110,9 @@ read -r -d '' networks_configuration <<EOF
           "dns": "$dns",
           "gateway": "$ert_subnet_gw_az3",
           "availability_zones": ["$az3"]
+=======
+          "availability_zone_names": ["$az1"]
+>>>>>>> 170ac983... my edits for 1 az
         }
       ]
     },
@@ -130,6 +140,7 @@ read -r -d '' networks_configuration <<EOF
           "reserved_ip_ranges": "$services_subnet_reserved_ranges_z1",
           "dns": "$dns",
           "gateway": "$services_subnet_gw_az1",
+<<<<<<< HEAD
           "availability_zones": ["$az1"]
         },
         {
@@ -147,6 +158,9 @@ read -r -d '' networks_configuration <<EOF
           "dns": "$dns",
           "gateway": "$services_subnet_gw_az3",
           "availability_zones": ["$az3"]
+=======
+          "availability_zone_names": ["$az1"]
+>>>>>>> 170ac983... my edits for 1 az
         }
       ]
     },
@@ -160,6 +174,7 @@ read -r -d '' networks_configuration <<EOF
           "reserved_ip_ranges": "$dynamic_services_subnet_reserved_ranges_z1",
           "dns": "$dns",
           "gateway": "$dynamic_services_subnet_gw_az1",
+<<<<<<< HEAD
           "availability_zones": ["$az1"]
         },
         {
@@ -177,6 +192,9 @@ read -r -d '' networks_configuration <<EOF
           "dns": "$dns",
           "gateway": "$dynamic_services_subnet_gw_az3",
           "availability_zones": ["$az3"]
+=======
+          "availability_zone_names": ["$az1"]
+>>>>>>> 170ac983... my edits for 1 az
         }
       ]
     }

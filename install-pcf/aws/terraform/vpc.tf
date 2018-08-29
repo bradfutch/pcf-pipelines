@@ -53,36 +53,3 @@ resource "aws_instance" "nat_az1" {
         Name = "${var.prefix}-Nat Instance az1"
     }
 }
-
-resource "aws_instance" "nat_az2" {
-    ami = "${var.amis_nat}"
-    availability_zone = "${var.aws_az2}"
-    instance_type = "${var.nat_instance_type}"
-    key_name = "${var.aws_key_name}"
-    vpc_security_group_ids = ["${aws_security_group.nat_instance_sg.id}"]
-    subnet_id = "${aws_subnet.PcfVpcPublicSubnet_az2.id}"
-    associate_public_ip_address = true
-    source_dest_check = false
-    private_ip = "${var.nat_ip_az2}"
-
-    tags {
-        Name = "${var.prefix}-Nat Instance az2"
-    }
-}
-
-# NAT Insance
-resource "aws_instance" "nat_az3" {
-    ami = "${var.amis_nat}"
-    availability_zone = "${var.aws_az3}"
-    instance_type = "${var.nat_instance_type}"
-    key_name = "${var.aws_key_name}"
-    vpc_security_group_ids = ["${aws_security_group.nat_instance_sg.id}"]
-    subnet_id = "${aws_subnet.PcfVpcPublicSubnet_az3.id}"
-    associate_public_ip_address = true
-    source_dest_check = false
-    private_ip = "${var.nat_ip_az3}"
-
-    tags {
-        Name = "${var.prefix}-Nat Instance az3"
-    }
-}
