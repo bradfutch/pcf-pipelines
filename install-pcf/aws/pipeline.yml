@@ -28,18 +28,11 @@ resources:
 - name: pcf-pipelines
   type: git
   source:
-<<<<<<< HEAD
     uri: https://github.com/bradfutch/pcf-pipelines.git
-    branch: master
-    username: {{git_username}}
-    password: {{git_private_key}}
-=======
-    uri: https://github.com/pivotal-cf/pcf-pipelines.git
-    branch: master
+    branch: brad
     username: {{git_username}}
     password: {{git_private_key}}
     tag_filter: v0.23.0
->>>>>>> 170ac983... my edits for 1 az
 
 - name: pivnet-opsmgr
   type: pivnet
@@ -108,13 +101,8 @@ jobs:
       amis_nat: {{amis_nat}}
       aws_region: {{aws_region}}
       aws_az1: {{aws_az1}}
-<<<<<<< HEAD
-      aws_az2: {{aws_az2}}
-      aws_az3: {{aws_az3}}
-=======
       system_domain: {{system_domain}}
       apps_domain: {{apps_domain}}
->>>>>>> 170ac983... my edits for 1 az
       route53_zone_id: {{ROUTE_53_ZONE_ID}}
       vpc_cidr: {{vpc_cidr}}
       public_subnet_cidr_az1: {{public_subnet_cidr_az1}}
@@ -259,7 +247,7 @@ jobs:
     file: pcf-pipelines/tasks/configure-ert/task.yml
     params:
       pcf_iaas: aws
-      pcf_ert_domain: {{ERT_DOMAIN}}
+      pcf_ert_domain: {{pcf_ert_domain}}
       OPSMAN_CLIENT_ID: {{opsman_client_id}}
       OPSMAN_CLIENT_SECRET: {{opsman_client_secret}}
       OPS_MGR_USR: {{opsman_admin_username}}
