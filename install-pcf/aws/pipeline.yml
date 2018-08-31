@@ -30,7 +30,8 @@ resources:
   source:
     uri: https://github.com/bradfutch/pcf-pipelines.git
     branch: brad1
-    private_key: {{git_private_key}}
+    username: {{git_username}}
+    password: {{git_private_key}}
     tag_filter: v0.23.6
 
 - name: pivnet-opsmgr
