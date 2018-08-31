@@ -28,9 +28,11 @@ resources:
 - name: pcf-pipelines
   type: git
   source:
-    uri: git@github.com:pivotal-cf/pcf-pipelines.git
-    branch: master
-    private_key: {{git_private_key}}
+    uri: https://github.com/bradfutch/pcf-pipelines.git
+    branch: brad2
+    username: {{git_username}}
+    password: {{git_private_key}}
+    tag_filter: v0.23.6
 
 - name: pivnet-opsmgr
   type: pivnet
@@ -100,31 +102,24 @@ jobs:
       aws_region: {{aws_region}}
       aws_az1: {{aws_az1}}
       aws_az2: {{aws_az2}}
-      aws_az3: {{aws_az3}}
       system_domain: {{system_domain}}
       apps_domain: {{apps_domain}}
       route53_zone_id: {{ROUTE_53_ZONE_ID}}
       vpc_cidr: {{vpc_cidr}}
       public_subnet_cidr_az1: {{public_subnet_cidr_az1}}
       public_subnet_cidr_az2: {{public_subnet_cidr_az2}}
-      public_subnet_cidr_az3: {{public_subnet_cidr_az3}}
       ert_subnet_cidr_az1: {{ert_subnet_cidr_az1}}
       ert_subnet_cidr_az2: {{ert_subnet_cidr_az2}}
-      ert_subnet_cidr_az3: {{ert_subnet_cidr_az3}}
       services_subnet_cidr_az1: {{services_subnet_cidr_az1}}
       services_subnet_cidr_az2: {{services_subnet_cidr_az2}}
-      services_subnet_cidr_az3: {{services_subnet_cidr_az3}}
       dynamic_services_subnet_cidr_az1: {{dynamic_services_subnet_cidr_az1}}
       dynamic_services_subnet_cidr_az2: {{dynamic_services_subnet_cidr_az2}}
-      dynamic_services_subnet_cidr_az3: {{dynamic_services_subnet_cidr_az3}}
       infra_subnet_cidr_az1: {{infra_subnet_cidr_az1}}
       rds_subnet_cidr_az1: {{rds_subnet_cidr_az1}}
       rds_subnet_cidr_az2: {{rds_subnet_cidr_az2}}
-      rds_subnet_cidr_az3: {{rds_subnet_cidr_az3}}
       opsman_ip_az1: {{opsman_ip_az1}}
       nat_ip_az1: {{nat_ip_az1}}
       nat_ip_az2: {{nat_ip_az2}}
-      nat_ip_az3: {{nat_ip_az3}}
       OPSMAN_ALLOW_SSH_CIDR_RANGES: {{opsman_allow_ssh_cidr_ranges}}
       OPSMAN_ALLOW_HTTPS_CIDR_RANGES: {{opsman_allow_https_cidr_ranges}}
     ensure:
@@ -190,13 +185,10 @@ jobs:
       TRUSTED_CERTIFICATES: {{director_certificates}}
       ert_subnet_reserved_ranges_z1: {{ert_subnet_reserved_ranges_z1}}
       ert_subnet_reserved_ranges_z2: {{ert_subnet_reserved_ranges_z2}}
-      ert_subnet_reserved_ranges_z3: {{ert_subnet_reserved_ranges_z3}}
       services_subnet_reserved_ranges_z1: {{services_subnet_reserved_ranges_z1}}
       services_subnet_reserved_ranges_z2: {{services_subnet_reserved_ranges_z2}}
-      services_subnet_reserved_ranges_z3: {{services_subnet_reserved_ranges_z3}}
       dynamic_services_subnet_reserved_ranges_z1: {{dynamic_services_subnet_reserved_ranges_z1}}
       dynamic_services_subnet_reserved_ranges_z2: {{dynamic_services_subnet_reserved_ranges_z2}}
-      dynamic_services_subnet_reserved_ranges_z3: {{dynamic_services_subnet_reserved_ranges_z3}}
       infra_subnet_reserved_ranges_z1: {{infra_subnet_reserved_ranges_z1}}
 
 - name: deploy-director
@@ -270,7 +262,6 @@ jobs:
       OPS_MGR_PWD: {{opsman_admin_password}}
       pcf_az_1: {{aws_az1}}
       pcf_az_2: {{aws_az2}}
-      pcf_az_3: {{aws_az3}}
       terraform_prefix: {{terraform_prefix}}
       S3_ENDPOINT: {{S3_ENDPOINT}}
       mysql_monitor_recipient_email: {{mysql_monitor_recipient_email}}

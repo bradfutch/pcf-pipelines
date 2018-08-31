@@ -10,7 +10,6 @@ variable "amis_nat" {}
 variable "aws_region" {}
 variable "aws_az1" {}
 variable "aws_az2" {}
-variable "aws_az3" {}
 variable "route53_zone_id" {}
 
 /*
@@ -118,40 +117,8 @@ variable "nat_ip_az2" {
 variable "apps_domain" {}
 variable "system_domain" {}
 
-/*
-  Availability Zone 3
-*/
-variable "public_subnet_cidr_az3" {
-    description = "CIDR for the Public Subnet 3"
-    default = "10.0.2.0/24"
-}
-variable "ert_subnet_cidr_az3" {
-    description = "CIDR for the Private Subnet 3"
-    default = "10.0.48.0/20"
-}
-# RDS subnet
-variable "rds_subnet_cidr_az3" {
-    description = "CIDR for the RDS Subnet 3"
-    default = "10.0.5.0/24"
-}
-# Services subnet
-variable "services_subnet_cidr_az3" {
-    description = "CIDR for the Services Subnet 3"
-    default = "10.0.96.0/20"
-}
-# Dynamic Services subnet
-variable "dynamic_services_subnet_cidr_az3" {
-    description = "CIDR for the Dynamic Services Subnet 3"
-    default = "10.0.144.0/20"
-}
-
 # Services subnet
 variable "infra_subnet_cidr_az1" {
     description = "CIDR for the infrastructure"
     default = "10.0.6.0/24"
 }
-
-variable "nat_ip_az3" {
-    default = "10.0.2.6"
-}
-

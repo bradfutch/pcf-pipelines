@@ -117,63 +117,6 @@ resource "aws_subnet" "PcfVpcDynamicServicesSubnet_az2" {
     }
 }
 
-/*
-  For Third availability zone.  There will not be modification to main routing table as it was already
-  done while setting up
-
-*/
-resource "aws_subnet" "PcfVpcPublicSubnet_az3" {
-    vpc_id = "${aws_vpc.PcfVpc.id}"
-
-    cidr_block = "${var.public_subnet_cidr_az3}"
-    availability_zone = "${var.aws_az3}"
-
-    tags {
-        Name = "${var.prefix}-PcfVpc Public Subnet AZ3"
-    }
-}
-resource "aws_subnet" "PcfVpcErtSubnet_az3" {
-    vpc_id = "${aws_vpc.PcfVpc.id}"
-
-    cidr_block = "${var.ert_subnet_cidr_az3}"
-    availability_zone = "${var.aws_az3}"
-
-    tags {
-        Name = "${var.prefix}-PcfVpc Ert Subnet AZ3"
-    }
-}
-
-resource "aws_subnet" "PcfVpcRdsSubnet_az3" {
-    vpc_id = "${aws_vpc.PcfVpc.id}"
-
-    cidr_block = "${var.rds_subnet_cidr_az3}"
-    availability_zone = "${var.aws_az3}"
-
-    tags {
-        Name = "${var.prefix}-PcfVpc Rds Subnet AZ3"
-    }
-}
-resource "aws_subnet" "PcfVpcServicesSubnet_az3" {
-    vpc_id = "${aws_vpc.PcfVpc.id}"
-
-    cidr_block = "${var.services_subnet_cidr_az3}"
-    availability_zone = "${var.aws_az3}"
-
-    tags {
-        Name = "${var.prefix}-PcfVpc Services Subnet AZ3"
-    }
-}
-resource "aws_subnet" "PcfVpcDynamicServicesSubnet_az3" {
-    vpc_id = "${aws_vpc.PcfVpc.id}"
-
-    cidr_block = "${var.dynamic_services_subnet_cidr_az3}"
-    availability_zone = "${var.aws_az3}"
-
-    tags {
-        Name = "${var.prefix}-PcfVpc Dynamic Services Subnet AZ3"
-    }
-}
-
 # Infrastructure network  - For bosh director
 resource "aws_subnet" "PcfVpcInfraSubnet_az1" {
     vpc_id = "${aws_vpc.PcfVpc.id}"
