@@ -2,10 +2,10 @@
 
 set -eu
 
-until $(curl -k --output /dev/null -k --silent --head --fail https://$OPSMAN_DOMAIN_OR_IP_ADDRESS/setup); do
-    printf '.'
-    sleep 5
-done
+#until $(curl -k --output /dev/null -k --silent --head --fail https://$OPSMAN_DOMAIN_OR_IP_ADDRESS/setup); do
+#    printf '.'
+#    sleep 5
+#done
 
 om-linux \
   --target https://$OPSMAN_DOMAIN_OR_IP_ADDRESS \
