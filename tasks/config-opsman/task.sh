@@ -2,7 +2,7 @@
 
 set -eu
 
-until $(curl --output /dev/null -k --silent --head --fail https://$OPSMAN_DOMAIN_OR_IP_ADDRESS/setup); do
+until $(curl -k --output /dev/null -k --silent --head --fail https://$OPSMAN_DOMAIN_OR_IP_ADDRESS/setup); do
     printf '.'
     sleep 5
 done
