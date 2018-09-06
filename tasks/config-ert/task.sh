@@ -485,6 +485,8 @@ cf_network=$(
     '
 )
 
+echo "cf_network : $cf_network"
+
 JOB_RESOURCE_CONFIG="{
   \"backup-prepare\": { \"instances\": $BACKUP_PREPARE_INSTANCES },
   \"clock_global\": { \"instances\": $CLOCK_GLOBAL_INSTANCES },
