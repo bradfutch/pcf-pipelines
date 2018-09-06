@@ -140,7 +140,7 @@ cf_network=$(
     '
 )
 
-echo "cf_networks : $cf_networks"
+echo "cf_networks : $cf_network"
 
 cf_resources=$(
   jq -n \
