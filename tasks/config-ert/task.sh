@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euo pipefail
+set -xeuo pipefail
 
 source pcf-pipelines/functions/generate_cert.sh
 
