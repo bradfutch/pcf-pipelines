@@ -485,7 +485,7 @@ cf_network=$(
     '
 )
 
-echo "cf_network : $cf_network"
+printf "cf_network : $cf_network"
 
 JOB_RESOURCE_CONFIG="{
   \"backup-prepare\": { \"instances\": $BACKUP_PREPARE_INSTANCES },
